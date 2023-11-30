@@ -11,7 +11,7 @@ type echoServer struct {
 	router *echo.Echo
 }
 
-func NewGinServer() *echo.Echo {
+func NewEchoServer() *echo.Echo {
 	server := &echoServer{
 		router: echo.New(),
 	}

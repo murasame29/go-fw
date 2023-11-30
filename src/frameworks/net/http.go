@@ -10,7 +10,7 @@ type netServer struct {
 	router *http.ServeMux
 }
 
-func NewGinServer() *http.ServeMux {
+func NewNetHttpServer() *http.ServeMux {
 	server := &netServer{
 		router: http.NewServeMux(),
 	}

@@ -23,9 +23,9 @@ func selectFramework(fw string) any {
 	case "gin":
 		return gin.NewGinServer()
 	case "echo":
-		return echo.NewGinServer()
+		return echo.NewEchoServer()
 	case "net":
-		return net.NewGinServer()
+		return net.NewNetHttpServer()
 	default:
 		panic(fmt.Sprintf("Unknown framework %s", fw))
 	}
