@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"murasame29/go-fw/src/frameworks/echo"
 	"murasame29/go-fw/src/frameworks/gin"
 	"murasame29/go-fw/src/server"
 )
@@ -20,6 +21,8 @@ func selectFramework(fw string) any {
 	switch fw {
 	case "gin":
 		return gin.NewGinServer()
+	case "echo":
+		return echo.NewGinServer()
 	default:
 		panic(fmt.Sprintf("Unknown framework %s", fw))
 	}
