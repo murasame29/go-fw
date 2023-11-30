@@ -2,6 +2,7 @@ package gin
 
 import (
 	"murasame29/go-fw/src/domain"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
@@ -21,7 +22,7 @@ func NewGinServer() *gin.Engine {
 
 func (s *ginServer) helloWorld() {
 	s.router.GET("/", func(c *gin.Context) {
-		c.JSON(200, domain.Response{
+		c.JSON(http.StatusOK, domain.Response{
 			Message: "Hello World",
 		})
 	})
