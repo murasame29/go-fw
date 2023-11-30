@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"murasame29/go-fw/src/frameworks/echo"
 	"murasame29/go-fw/src/frameworks/gin"
+	"murasame29/go-fw/src/frameworks/net"
 	"murasame29/go-fw/src/server"
 )
 
@@ -23,6 +24,8 @@ func selectFramework(fw string) any {
 		return gin.NewGinServer()
 	case "echo":
 		return echo.NewGinServer()
+	case "net":
+		return net.NewGinServer()
 	default:
 		panic(fmt.Sprintf("Unknown framework %s", fw))
 	}
