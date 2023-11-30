@@ -6,12 +6,12 @@ import (
 	"net/http"
 )
 
-type ginServer struct {
+type netServer struct {
 	router *http.ServeMux
 }
 
 func NewGinServer() *http.ServeMux {
-	server := &ginServer{
+	server := &netServer{
 		router: http.NewServeMux(),
 	}
 	server.helloWorld()
@@ -19,7 +19,7 @@ func NewGinServer() *http.ServeMux {
 	return server.router
 }
 
-func (s *ginServer) helloWorld() {
+func (s *netServer) helloWorld() {
 	s.router.Handle("/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodGet {
 			w.WriteHeader(http.StatusMethodNotAllowed)
